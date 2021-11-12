@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31402.337
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Arcaptcha.NetCore", "src\Arcaptcha.NetCore\Arcaptcha.NetCore.csproj", "{713F9D1E-14DE-4FE7-BA65-4CE91D58F363}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Arcaptcha.Core", "src\Arcaptcha.Core\Arcaptcha.Core.csproj", "{C320ADC4-445C-492B-AD17-9238485CD2BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arcaptcha.Net", "src\Arcaptcha.Net\Arcaptcha.Net.csproj", "{CEAB91A1-865B-43DF-A6BE-46F742333099}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D367E1F8-CFF1-47CD-95CE-F551C2ECBCEF}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{713F9D1E-14DE-4FE7-BA65-4CE91D58F363}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{713F9D1E-14DE-4FE7-BA65-4CE91D58F363}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{713F9D1E-14DE-4FE7-BA65-4CE91D58F363}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{713F9D1E-14DE-4FE7-BA65-4CE91D58F363}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C320ADC4-445C-492B-AD17-9238485CD2BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C320ADC4-445C-492B-AD17-9238485CD2BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C320ADC4-445C-492B-AD17-9238485CD2BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C320ADC4-445C-492B-AD17-9238485CD2BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEAB91A1-865B-43DF-A6BE-46F742333099}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEAB91A1-865B-43DF-A6BE-46F742333099}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEAB91A1-865B-43DF-A6BE-46F742333099}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEAB91A1-865B-43DF-A6BE-46F742333099}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BE1D31C6-2692-4EC1-8EB2-DA93286A5E2A}
+	EndGlobalSection
+EndGlobal

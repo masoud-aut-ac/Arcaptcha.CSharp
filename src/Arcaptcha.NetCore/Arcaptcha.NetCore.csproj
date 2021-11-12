@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Masoud Ghasemi</Authors>
+    <Product>https://arcaptcha.ir/</Product>
+    <Company>Arcaptcha Team</Company>
+    <PackageProjectUrl>https://arcaptcha.ir/</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/masoud-aut-ac/Arcaptcha.CSharp.git</RepositoryUrl>
+    <Copyright>Copyright (c) Arcaptcha 2021</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Description>One of the most well-documented Arcaptcha libraries in the open source community</Description>
+    <PackageReleaseNotes>This is the first verison of this library</PackageReleaseNotes>
+    <AssemblyVersion>1.0.2.0</AssemblyVersion>
+    <FileVersion>1.0.2.0</FileVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Html.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.ViewFeatures" Version="2.2.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Arcaptcha.Core\Arcaptcha.Core.csproj" />
+  </ItemGroup>
+
+</Project>
