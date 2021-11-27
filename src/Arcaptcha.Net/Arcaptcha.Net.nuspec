@@ -2,16 +2,15 @@
 <package >
   <metadata>
     <id>$id$</id>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <title>$title$</title>
     <authors>Masoud Ghasemi</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <license type="expression">MIT</license>
     <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
-    <description>One of the most well-documented Arcaptcha libraries in the open source community</description>
-    <releaseNotes>This is the first verison of this library</releaseNotes>
-    <copyright>Copyright (c) Arcaptcha 2021</copyright>
-    <repository url="https://github.com/masoud-aut-ac/Arcaptcha.CSharp.git" />
-    <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <projectUrl>https://arcaptcha.ir/</projectUrl>
+    <description>One of the most well-documented Arcaptcha libraries in the open source community</description>
+    <releaseNotes>First verion ready to use.</releaseNotes>
+    <copyright>$copyright$</copyright>
   </metadata>
 </package>
