@@ -90,10 +90,10 @@ namespace Arcaptcha.NetCore.MVC
         /// <param name="verificationUrl">The verification Url required for making the Arcaptcha verification request.</param>
         /// </summary>
         /// <returns>Returns the result as a value of the <see cref="ArcaptchaVerificationResult"/> enum.</returns>
-        public static Task<ArcaptchaVerificationResult> VerifyArcaptchaResponseTaskAsync(this ControllerBase controller, string secretKey, string siteKey, string verificationUrl)
+        public static Task<ArcaptchaVerificationResult> VerifyArcaptchaResponseAsync(this ControllerBase controller, string secretKey, string siteKey, string verificationUrl)
         {
             var verificationHelper = new ArcaptchaVerificationHelper(controller.HttpContext, secretKey, siteKey, verificationUrl);
-            return verificationHelper.VerifyArcaptchaResponseTaskAsync();
+            return verificationHelper.VerifyArcaptchaResponseAsync();
         }
 
         /// <summary>
@@ -122,10 +122,10 @@ namespace Arcaptcha.NetCore.MVC
         /// Verifies whether the user's response to the Arcaptcha request is correct.
         /// </summary>
         /// <returns>Returns the result as a value of the <see cref="ArcaptchaVerificationResult"/> enum.</returns>
-        public static Task<ArcaptchaVerificationResult> VerifyArcaptchaResponseTaskAsync(this ControllerBase controller)
+        public static Task<ArcaptchaVerificationResult> VerifyArcaptchaResponseAsync(this ControllerBase controller)
         {
             var verificationHelper = CreateArcaptchaVerificationHelper(controller);
-            return verificationHelper.VerifyArcaptchaResponseTaskAsync();
+            return verificationHelper.VerifyArcaptchaResponseAsync();
         }
 
 

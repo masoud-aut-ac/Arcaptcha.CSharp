@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);CopyProjectReferencesToPackage</TargetsForTfmSpecificBuildOutput>
     <Authors>Masoud Ghasemi</Authors>
     <Product>https://arcaptcha.ir/</Product>
     <Company>Arcaptcha Team</Company>
@@ -12,8 +13,9 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Description>One of the most well-documented Arcaptcha libraries in the open source community</Description>
     <PackageReleaseNotes>This is the first verison of this library</PackageReleaseNotes>
-    <AssemblyVersion>1.0.2.0</AssemblyVersion>
-    <FileVersion>1.0.2.0</FileVersion>
+    <AssemblyVersion>1.0.7.0</AssemblyVersion>
+    <FileVersion>1.0.7.0</FileVersion>
+    <Version>1.0.7</Version>
   </PropertyGroup>
 
   <ItemGroup>
@@ -26,5 +28,11 @@
   <ItemGroup>
     <ProjectReference Include="..\Arcaptcha.Core\Arcaptcha.Core.csproj" />
   </ItemGroup>
+
+  <Target DependsOnTargets="ResolveReferences" Name="CopyProjectReferencesToPackage">
+    <ItemGroup>
+      <BuildOutputInPackage Include="@(ReferenceCopyLocalPaths-&gt;WithMetadataValue('ReferenceSourceTarget', 'ProjectReference'))" />
+    </ItemGroup>
+  </Target>
 
 </Project>

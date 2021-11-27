@@ -34,7 +34,7 @@ Arcaptcha for .NET is one of the most popular and well-documented Arcaptcha libr
 ArcaptchaConfigurationManager.SetConfiguration(Configuration);</pre></code>
 <h3>Render Arcaptcha Widget</h3>
 <p><strong>ASP.NET MVC 5 / ASP.NET Core</strong></p>
-<pre><code>@using Arcaptcha.Web.Mvc;
+<pre><code>@using Arcaptcha.NetCore.Mvc;
 ...
 @Html.ArcaptchaWidget()
 </code></pre>

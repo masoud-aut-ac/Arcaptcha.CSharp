@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
@@ -16,10 +17,15 @@ namespace Arcaptcha.Net
     /// </summary>
     public class ArcaptchaVerificationHelper
     {
+        #region Fields
+        private static readonly HttpClient _client;
+        #endregion
         #region Constructors
 
-        private ArcaptchaVerificationHelper()
-        { }
+        static ArcaptchaVerificationHelper()
+        {
+            _client = new HttpClient();
+        }
 
         /// <summary>
         /// Creates an instance of the <see cref="ArcaptchaVerificationHelper"/> class.
@@ -101,49 +107,22 @@ namespace Arcaptcha.Net
         /// <returns>Returns the result as a value of the <see cref="ArcaptchaVerificationResult"/> enum.</returns>
         public ArcaptchaVerificationResult VerifyArcaptchaResponse()
         {
-            string postData = $"secret_key={SecretKey}&challenge_id={Response}&site_key={SiteKey}";
+            string postData = $"{{ \"secret_key\": \"{SecretKey}\",\"challenge_id\":\"{Response}\",\"site_key\":\"{SiteKey}\"}}";
 
-            byte[] postDataBuffer = Encoding.ASCII.GetBytes(postData);
-            Uri verifyUri = new Uri(VerificationUrl, UriKind.Absolute);
-            try
-            {
-                var webRequest = (HttpWebRequest)WebRequest.Create(verifyUri);
-                webRequest.ContentType = "application/x-www-form-urlencoded";
-                webRequest.ContentLength = postDataBuffer.Length;
-                webRequest.Method = "POST";
+            var content = new StringContent(postData, Encoding.UTF8, "application/json");
 
-                var proxy = WebRequest.GetSystemWebProxy();
-                proxy.Credentials = CredentialCache.DefaultCredentials;
+            var result = _client.PostAsync(VerificationUrl, content).Result;
 
-                webRequest.Proxy = proxy;
+            var resString = result.Content.ReadAsStringAsync().Result;
 
-                using (var requestStream = webRequest.GetRequestStream())
-                {
-                    requestStream.Write(postDataBuffer, 0, postDataBuffer.Length);
-                }
-
-                var webResponse = (HttpWebResponse)webRequest.GetResponse();
-
-                string sResponse = null;
-
-                using (var sr = new StreamReader(webResponse.GetResponseStream()))
-                {
-                    sResponse = sr.ReadToEnd();
-                }
-
-                return JsonConvert.DeserializeObject<ArcaptchaVerificationResult>(sResponse);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            return JsonConvert.DeserializeObject<ArcaptchaVerificationResult>(resString);
         }
 
         /// <summary>
         /// Verifies whether the user's response to the Arcaptcha request is correct.
         /// </summary>
         /// <returns>Returns the result as a value of the <see cref="ArcaptchaVerificationResult"/> enum.</returns>
-        public Task<ArcaptchaVerificationResult> VerifyArcaptchaResponseTaskAsync()
+        public Task<ArcaptchaVerificationResult> VerifyArcaptchaResponseAsync()
         {
             return Task.Run(() => VerifyArcaptchaResponse());
         }

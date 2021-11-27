@@ -51,7 +51,7 @@ ArcaptchaConfigurationManager.SetConfiguration(Configuration);</pre></code>
 &lt;cc1:ArcaptchaWidget ID="Arcaptcha1" runat="server" /&gt;
 </code></pre>
 <p><strong>ASP.NET MVC 5 / ASP.NET Core</strong></p>
-<pre><code>@using Arcaptcha.Web.Mvc;
+<pre><code>@using Arcaptcha.Net.Mvc;
 ...
 @Html.ArcaptchaWidget()
 </code></pre>
@@ -63,8 +63,11 @@ ArcaptchaConfigurationManager.SetConfiguration(Configuration);</pre></code>
 &lt;cc1:ArcaptchaWidget ID="ArcaptchaWidget1" RenderApiScript="false" runat="server" /&gt;
 &lt;cc1:ArcaptchaWidget ID="ArcaptchaWidget2" RenderApiScript="false" runat="server" /&gt;
 </code></pre>
-<p><strong>ASP.NET MVC 5 / ASP.NET Core</strong></p>
-<pre><code>@using Arcaptcha.Web.Mvc;
+<p><strong>ASP.NET MVC 5</strong></p>
+<pre><code>@using Arcaptcha.Net.Mvc;
+<p><strong>ASP.NET Core</strong></p>
+<pre><code>@using Arcaptcha.NetCore.Mvc;
+
 ...
 @Html.ArcaptchaApiScript()
 @Html.ArcaptchaWidget(rednderApiScript:false)
@@ -90,8 +93,10 @@ else
     }
 }
 </code></pre>
-<p><strong>ASP.NET MVC 5 / ASP.NET Core</strong></p>
-<pre><code class="language-cs">using Arcaptcha.Web.Mvc;
+<p><strong>ASP.NET MVC 5 </strong></p>
+<pre><code class="language-cs">using Arcaptcha.Net.Mvc;
+<p><strong>ASP.NET Core</strong></p>
+<pre><code class="language-cs">using Arcaptcha.NetCore.Mvc;
 ...
 
 if (this.VerifyArcaptchaResponse().Success)

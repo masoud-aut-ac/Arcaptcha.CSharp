@@ -179,14 +179,14 @@ namespace Arcaptcha.Net.UI.Controls
         /// <returns>Returns the verification result as <see cref="ArcaptchaVerificationResult"/> enum value.</returns>
         ///<exception cref="InvalidOperationException">The private key is null or empty.</exception>
         ///<exception cref="System.Net.WebException">The time-out period for the Arcaptcha verification request expired.</exception>
-        public Task<ArcaptchaVerificationResult> VerifyTaskAsync()
+        public Task<ArcaptchaVerificationResult> VerifyAsync()
         {
             if (_verificationHelper == null)
             {
                 _verificationHelper = new ArcaptchaVerificationHelper(SecretKey, SiteKey, VerificationUrl);
             }
 
-            return _verificationHelper.VerifyArcaptchaResponseTaskAsync();
+            return _verificationHelper.VerifyArcaptchaResponseAsync();
         }
 
         #endregion Public Methods

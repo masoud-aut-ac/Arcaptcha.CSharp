@@ -23,7 +23,7 @@ namespace Arcaptcha.NetCore.Configuration
         {
             _configuration = configuration ?? throw new ArgumentNullException(nameof(configuration));
             IConfigurationSection section = _configuration.GetSection("Arcaptcha");
-            string widgetScriptUrl = (section.AsEnumerable().Any(x => x.Key == "WidgetScriptUrl")) ? section["WidgetScriptUrl"] : "";
+            string widgetScriptUrl = (section.AsEnumerable().Any(x => x.Key.Contains("WidgetScriptUrl"))) ? section["WidgetScriptUrl"] : "";
             arcConfig = new ArcaptchaConfiguration(section["SiteKey"], section["SecretKey"], section["VerificationUrl"], widgetScriptUrl);
         }
 
