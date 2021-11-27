@@ -13,9 +13,9 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Description>One of the most well-documented Arcaptcha libraries in the open source community</Description>
     <PackageReleaseNotes>This is the first verison of this library</PackageReleaseNotes>
-    <AssemblyVersion>1.0.8.0</AssemblyVersion>
-    <FileVersion>1.0.8.0</FileVersion>
-    <Version>1.0.8</Version>
+    <AssemblyVersion>1.0.9.0</AssemblyVersion>
+    <FileVersion>1.0.9.0</FileVersion>
+    <Version>1.0.9.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
