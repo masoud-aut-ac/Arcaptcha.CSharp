@@ -40,7 +40,7 @@ Arcaptcha for .NET is one of the most popular and well-documented Arcaptcha libr
 } 
 </code></pre>
 <p>In the <strong>ConfigureServices</strong> method of the <strong>Startup</strong> class, add the following line of code:</p>
-<pre><code class="language-cs">using Arcaptcha.Web.Configuration;
+<pre><code class="language-cs">using Arcaptcha.NetCore.Configuration;
 ...
 ArcaptchaConfigurationManager.SetConfiguration(Configuration);</pre></code>
 <h3>Render Arcaptcha Widget</h3>
@@ -50,11 +50,18 @@ ArcaptchaConfigurationManager.SetConfiguration(Configuration);</pre></code>
 ...
 &lt;cc1:ArcaptchaWidget ID="Arcaptcha1" runat="server" /&gt;
 </code></pre>
-<p><strong>ASP.NET MVC 5 / ASP.NET Core</strong></p>
-<pre><code>@using Arcaptcha.Net.Mvc;
+<p><strong>ASP.NET MVC 5</strong></p>
+<pre><code>@using Arcaptcha.Net.Mvc;</code></pre>
+
+<p><strong>ASP.NET Core</strong></p>
+<pre><code>@using Arcaptcha.NetCore.Mvc;</code></pre>
+
+<p><strong>Both Asp .Net and ASP.NET Core</strong></p>
+<pre><code>
 ...
 @Html.ArcaptchaWidget()
 </code></pre>
+
 <p>The above code by default renders both the API script as well as the widget. There are times when you want to render the API script and the widget separately such as the need to render multiple widgets on a page. The following is an example of how to achieve this:</p>
 <p><strong>ASP.NET Web Forms</strong></p>
 <pre><code>&lt;%@ Register Assembly="Arcaptcha.Net" Namespace="Arcaptcha.Net.UI.Controls" TagPrefix="cc1" %&gt;
@@ -64,15 +71,19 @@ ArcaptchaConfigurationManager.SetConfiguration(Configuration);</pre></code>
 &lt;cc1:ArcaptchaWidget ID="ArcaptchaWidget2" RenderApiScript="false" runat="server" /&gt;
 </code></pre>
 <p><strong>ASP.NET MVC 5</strong></p>
-<pre><code>@using Arcaptcha.Net.Mvc;
-<p><strong>ASP.NET Core</strong></p>
-<pre><code>@using Arcaptcha.NetCore.Mvc;
+<pre><code>@using Arcaptcha.Net.Mvc;</code></pre>
 
+<p><strong>ASP.NET Core</strong></p>
+<pre><code>@using Arcaptcha.NetCore.Mvc;</code></pre>
+
+<p><strong>Both Asp .Net and ASP.NET Core</strong></p>
+<pre><code>
 ...
 @Html.ArcaptchaApiScript()
 @Html.ArcaptchaWidget(rednderApiScript:false)
 @Html.ArcaptchaWidget(rednderApiScript:false)
 </code></pre>
+
 <h3>Verify Arcaptcha Response</h3>
 <p>When your end-user submits the form that contains the Arcaptcha widget, you can easily verify Arcaptcha response with few lines of code:</p>
 <p><strong>ASP.NET Web Form</strong></p>
@@ -94,9 +105,12 @@ else
 }
 </code></pre>
 <p><strong>ASP.NET MVC 5 </strong></p>
-<pre><code class="language-cs">using Arcaptcha.Net.Mvc;
+<pre><code class="language-cs">using Arcaptcha.Net.Mvc;</code></pre>
 <p><strong>ASP.NET Core</strong></p>
-<pre><code class="language-cs">using Arcaptcha.NetCore.Mvc;
+<pre><code class="language-cs">using Arcaptcha.NetCore.Mvc;</code></pre>
+
+<p><strong>Both Asp .Net and ASP.NET Core</strong></p>
+<pre><code>
 ...
 
 if (this.VerifyArcaptchaResponse().Success)
